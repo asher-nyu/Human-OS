@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d2yp07ptkmmre" path="res://win_screen.gd" id="1_win"]
 [ext_resource type="FontFile" uid="uid://d1f33vk4fw6h2" path="res://EmojiSymbols-Regular.ttf" id="2_1txte"]
-[ext_resource type="StyleBox" path="res://1.tres" id="2_l5t5q"]
-[ext_resource type="StyleBox" path="res://2.tres" id="3_1txte"]
+[ext_resource type="StyleBox" uid="uid://d0hkivuyjn1jd" path="res://1.tres" id="2_l5t5q"]
+[ext_resource type="StyleBox" uid="uid://bbxy68iofkr1v" path="res://2.tres" id="3_1txte"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2arl"]
 bg_color = Color(0.05882353, 0.09019608, 0.1254902, 1)
@@ -71,18 +71,23 @@ offset_bottom = 165.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.5803922, 0.6392157, 0.72156864, 1)
 theme_override_font_sizes/font_size = 24
-text = "You survived all 4 stages of life!"
+text = "You successfully balanced all aspects of life!
+Congratulations on making it through!"
 horizontal_alignment = 1
 
 [node name="stats_container" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 20.0
-offset_top = 168.0
-offset_right = -20.0
-offset_bottom = 403.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -80.0
+offset_right = 118.0
+offset_bottom = 155.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 10
 
 [node name="stats_title" type="Label" parent="Panel/stats_container"]
@@ -156,22 +161,6 @@ theme_override_colors/font_color = Color(0.8862745, 0.9098039, 0.9411765, 1)
 theme_override_font_sizes/font_size = 28
 text = "Energy: 100"
 
-[node name="message" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 20.0
-offset_top = 401.0
-offset_right = -20.0
-offset_bottom = 481.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.8862745, 0.9098039, 0.9411765, 1)
-theme_override_font_sizes/font_size = 20
-text = "You successfully balanced all aspects of life!
-Congratulations on making it through!"
-horizontal_alignment = 1
-autowrap_mode = 2
-
 [node name="ButtonContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 7
@@ -196,13 +185,4 @@ theme_override_styles/normal = ExtResource("2_l5t5q")
 theme_override_styles/hover = ExtResource("3_1txte")
 text = "Play Again"
 
-[node name="quit_button" type="Button" parent="Panel/ButtonContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = ExtResource("2_l5t5q")
-theme_override_styles/hover = ExtResource("3_1txte")
-text = "Quit"
-
 [connection signal="pressed" from="Panel/ButtonContainer/restart_button" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="Panel/ButtonContainer/quit_button" to="." method="_on_quit_button_pressed"]
