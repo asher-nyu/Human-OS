@@ -1,0 +1,387 @@
+[gd_scene load_steps=6 format=3 uid="uid://brpw2ma5rh5gj"]
+
+[ext_resource type="Script" uid="uid://bsoj4d8nxc8m0" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="FontFile" uid="uid://d1f33vk4fw6h2" path="res://EmojiSymbols-Regular.ttf" id="2_0xm2m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
+bg_color = Color(0.05882353, 0.09019608, 0.1254902, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.12156863, 0.16470589, 0.21568628, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+bg_color = Color(0.05882353, 0.09019608, 0.1254902, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.12156863, 0.16470589, 0.21568628, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yge"]
+bg_color = Color(0.05882353, 0.09019608, 0.1254902, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.12156863, 0.16470589, 0.21568628, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_ig7tw")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.043137256, 0.05882353, 0.078431375, 1)
+
+[node name="GameTitle" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_right = 1920.0
+offset_bottom = 119.0
+grow_horizontal = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.8862745, 0.9098039, 0.9411765, 1)
+theme_override_font_sizes/font_size = 72
+text = "Life Balance"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatsPanel" type="Panel" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 280.0
+offset_bottom = 380.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ig7tw")
+
+[node name="PanelTitle" type="Label" parent="StatsPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 250.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0.8862745, 0.9098039, 0.9411765, 1)
+theme_override_font_sizes/font_size = 24
+text = "Your Stats"
+horizontal_alignment = 1
+
+[node name="money_container" type="HBoxContainer" parent="StatsPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 240.0
+offset_bottom = 95.0
+theme_override_constants/separation = 5
+
+[node name="money_emoji" type="Label" parent="StatsPanel/money_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.8, 0.4, 1)
+theme_override_fonts/font = ExtResource("2_0xm2m")
+theme_override_font_sizes/font_size = 24
+text = "💰"
+
+[node name="money_text" type="Label" parent="StatsPanel/money_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.8, 0.4, 1)
+theme_override_font_sizes/font_size = 24
+text = "Money: 100"
+
+[node name="happiness_container" type="HBoxContainer" parent="StatsPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 110.0
+offset_right = 240.0
+offset_bottom = 145.0
+theme_override_constants/separation = 5
+
+[node name="happiness_emoji" type="Label" parent="StatsPanel/happiness_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.4, 0.5, 1)
+theme_override_fonts/font = ExtResource("2_0xm2m")
+theme_override_font_sizes/font_size = 24
+text = "❤️"
+
+[node name="happiness_text" type="Label" parent="StatsPanel/happiness_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.4, 0.5, 1)
+theme_override_font_sizes/font_size = 24
+text = "Happiness: 100"
+
+[node name="social_container" type="HBoxContainer" parent="StatsPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 160.0
+offset_right = 240.0
+offset_bottom = 195.0
+theme_override_constants/separation = 5
+
+[node name="social_emoji" type="Label" parent="StatsPanel/social_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.6, 1, 1)
+theme_override_fonts/font = ExtResource("2_0xm2m")
+theme_override_font_sizes/font_size = 24
+text = "👥"
+
+[node name="social_text" type="Label" parent="StatsPanel/social_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.6, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "Social: 100"
+
+[node name="energy_container" type="HBoxContainer" parent="StatsPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 210.0
+offset_right = 240.0
+offset_bottom = 245.0
+theme_override_constants/separation = 5
+
+[node name="energy_emoji" type="Label" parent="StatsPanel/energy_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.3, 1)
+theme_override_fonts/font = ExtResource("2_0xm2m")
+theme_override_font_sizes/font_size = 24
+text = "⚡"
+
+[node name="energy_text" type="Label" parent="StatsPanel/energy_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.3, 1)
+theme_override_font_sizes/font_size = 24
+text = "Energy: 100"
+
+[node name="Separator" type="ColorRect" parent="StatsPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 260.0
+offset_right = 240.0
+offset_bottom = 263.0
+color = Color(0.12156863, 0.16470589, 0.21568628, 1)
+
+[node name="stage" type="Label" parent="StatsPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 280.0
+offset_right = 240.0
+offset_bottom = 340.0
+theme_override_colors/font_color = Color(0.8862745, 0.9098039, 0.9411765, 1)
+theme_override_font_sizes/font_size = 20
+text = "Stage: 1 (0/6 cards)
+Young Adult"
+vertical_alignment = 1
+
+[node name="InstructionLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 105.0
+offset_right = 1920.0
+offset_bottom = 155.0
+grow_horizontal = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.5803922, 0.6392157, 0.72156864, 1)
+theme_override_font_sizes/font_size = 36
+text = "Choose a card to make a decision"
+horizontal_alignment = 1
+
+[node name="card_container" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 384.0
+offset_top = 216.0
+offset_right = 1536.0
+offset_bottom = 864.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="reveal_overlay" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.85)
+
+[node name="reveal_panel" type="Panel" parent="reveal_overlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -150.0
+offset_right = 350.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0xm2m")
+
+[node name="reveal_title" type="Label" parent="reveal_overlay/reveal_panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -57.5
+offset_bottom = -12.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0, -20)
+theme_override_colors/font_color = Color(0.8862745, 0.9098039, 0.9411765, 1)
+theme_override_font_sizes/font_size = 32
+text = "Card Effects Revealed!"
+horizontal_alignment = 1
+
+[node name="reveal_effects_container" type="HBoxContainer" parent="reveal_overlay/reveal_panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 6.0
+offset_right = 200.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="money_effect" type="HBoxContainer" parent="reveal_overlay/reveal_panel/reveal_effects_container"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="money_emoji" type="Label" parent="reveal_overlay/reveal_panel/reveal_effects_container/money_effect"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0xm2m")
+theme_override_font_sizes/font_size = 42
+text = "💰"
+
+[node name="money_value" type="Label" parent="reveal_overlay/reveal_panel/reveal_effects_container/money_effect"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8862745, 0.9098039, 0.9411765, 1)
+theme_override_font_sizes/font_size = 42
+text = "+50"
+
+[node name="happiness_effect" type="HBoxContainer" parent="reveal_overlay/reveal_panel/reveal_effects_container"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="happiness_emoji" type="Label" parent="reveal_overlay/reveal_panel/reveal_effects_container/happiness_effect"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0xm2m")
+theme_override_font_sizes/font_size = 42
+text = "❤️"
+
+[node name="happiness_value" type="Label" parent="reveal_overlay/reveal_panel/reveal_effects_container/happiness_effect"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8862745, 0.9098039, 0.9411765, 1)
+theme_override_font_sizes/font_size = 42
+text = "-20"
+
+[node name="social_effect" type="HBoxContainer" parent="reveal_overlay/reveal_panel/reveal_effects_container"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="social_emoji" type="Label" parent="reveal_overlay/reveal_panel/reveal_effects_container/social_effect"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0xm2m")
+theme_override_font_sizes/font_size = 42
+text = "👥"
+
+[node name="social_value" type="Label" parent="reveal_overlay/reveal_panel/reveal_effects_container/social_effect"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8862745, 0.9098039, 0.9411765, 1)
+theme_override_font_sizes/font_size = 42
+text = "+0"
+
+[node name="energy_effect" type="HBoxContainer" parent="reveal_overlay/reveal_panel/reveal_effects_container"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="energy_emoji" type="Label" parent="reveal_overlay/reveal_panel/reveal_effects_container/energy_effect"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0xm2m")
+theme_override_font_sizes/font_size = 42
+text = "⚡"
+
+[node name="energy_value" type="Label" parent="reveal_overlay/reveal_panel/reveal_effects_container/energy_effect"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8862745, 0.9098039, 0.9411765, 1)
+theme_override_font_sizes/font_size = 42
+text = "-30"
+
+[node name="reveal_timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="typing_overlay" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.9)
+
+[node name="typing_panel" type="Panel" parent="typing_overlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -200.0
+offset_right = 450.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="typing_text" type="Label" parent="typing_overlay/typing_panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8862745, 0.9098039, 0.9411765, 1)
+theme_override_font_sizes/font_size = 24
+text = "Description appears here..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="typing_timer" type="Timer" parent="."]
+wait_time = 0.025
+
+[node name="typing_sound" type="AudioStreamPlayer" parent="."]
+
+[connection signal="timeout" from="reveal_timer" to="." method="_on_reveal_timer_timeout"]
+[connection signal="timeout" from="typing_timer" to="." method="_on_typing_timer_timeout"]

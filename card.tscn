@@ -1,0 +1,176 @@
+[gd_scene load_steps=6 format=3 uid="uid://r1rng8h7036r"]
+
+[ext_resource type="Script" uid="uid://cvhr4c7d357a3" path="res://card.gd" id="1_kikvd"]
+[ext_resource type="FontFile" uid="uid://d1f33vk4fw6h2" path="res://EmojiSymbols-Regular.ttf" id="2_rjlel"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kikvd"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.12156863, 0.16470589, 0.21568628, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjlel"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.416, 0.711, 1.074, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5obu"]
+bg_color = Color(0.07058824, 0.14901961, 0.23921569, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4731431, 0.8043576, 1.2123754, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="card" type="Panel"]
+custom_minimum_size = Vector2(300, 450)
+offset_right = 240.0
+offset_bottom = 450.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kikvd")
+script = ExtResource("1_kikvd")
+
+[node name="CardContent" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="title" type="Label" parent="CardContent"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8862745, 0.9098039, 0.9411765, 1)
+theme_override_font_sizes/font_size = 20
+text = "Card Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Separator1" type="ColorRect" parent="CardContent"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0.12156863, 0.16470589, 0.21568628, 1)
+
+[node name="description" type="Label" parent="CardContent"]
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.5803922, 0.6392157, 0.72156864, 1)
+theme_override_font_sizes/font_size = 30
+text = "Card description goes here..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Separator2" type="ColorRect" parent="CardContent"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0.12156863, 0.16470589, 0.21568628, 1)
+
+[node name="effects_container" type="HBoxContainer" parent="CardContent"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_constants/separation = 20
+horizontal_alignment = 1
+
+[node name="money_effect" type="HBoxContainer" parent="CardContent/effects_container"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="money_emoji" type="Label" parent="CardContent/effects_container/money_effect"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rjlel")
+theme_override_font_sizes/font_size = 20
+text = "💰"
+
+[node name="money_value" type="Label" parent="CardContent/effects_container/money_effect"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8862745, 0.9098039, 0.9411765, 1)
+theme_override_font_sizes/font_size = 20
+text = "+0"
+
+[node name="happiness_effect" type="HBoxContainer" parent="CardContent/effects_container"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="happiness_emoji" type="Label" parent="CardContent/effects_container/happiness_effect"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rjlel")
+theme_override_font_sizes/font_size = 20
+text = "❤️"
+
+[node name="happiness_value" type="Label" parent="CardContent/effects_container/happiness_effect"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8862745, 0.9098039, 0.9411765, 1)
+theme_override_font_sizes/font_size = 20
+text = "+0"
+
+[node name="social_effect" type="HBoxContainer" parent="CardContent/effects_container"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="social_emoji" type="Label" parent="CardContent/effects_container/social_effect"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rjlel")
+theme_override_font_sizes/font_size = 20
+text = "👥"
+
+[node name="social_value" type="Label" parent="CardContent/effects_container/social_effect"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8862745, 0.9098039, 0.9411765, 1)
+theme_override_font_sizes/font_size = 20
+text = "+0"
+
+[node name="energy_effect" type="HBoxContainer" parent="CardContent/effects_container"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="energy_emoji" type="Label" parent="CardContent/effects_container/energy_effect"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rjlel")
+theme_override_font_sizes/font_size = 20
+text = "⚡"
+
+[node name="energy_value" type="Label" parent="CardContent/effects_container/energy_effect"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8862745, 0.9098039, 0.9411765, 1)
+theme_override_font_sizes/font_size = 20
+text = "+0"
+
+[node name="choose" type="Button" parent="CardContent"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8862745, 0.9098039, 0.9411765, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_rjlel")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q5obu")
+text = "CHOOSE"
+
+[connection signal="pressed" from="CardContent/choose" to="." method="_on_choose_pressed"]

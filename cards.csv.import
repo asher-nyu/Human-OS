@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://c5oqiefegxtua"
+
+[deps]
+
+files=["res://cards.Description.translation", "res://cards.Money.translation", "res://cards.Happiness.translation", "res://cards.Social.translation", "res://cards.Energy.translation", "res://cards.Background.translation", "res://cards.MoneyReason.translation", "res://cards.HappinessReason.translation", "res://cards.SocialReason.translation", "res://cards.EnergyReason.translation"]
+
+source_file="res://cards.csv"
+dest_files=["res://cards.Description.translation", "res://cards.Money.translation", "res://cards.Happiness.translation", "res://cards.Social.translation", "res://cards.Energy.translation", "res://cards.Background.translation", "res://cards.MoneyReason.translation", "res://cards.HappinessReason.translation", "res://cards.SocialReason.translation", "res://cards.EnergyReason.translation"]
+
+[params]
+
+compress=true
+delimiter=0
